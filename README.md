@@ -22,13 +22,13 @@ En este proyecto debo de demostrar mi aprendizaje de la parte inicial del Backen
 ## Clonación del Proyecto:
 
 ```sh
-
+git clone https://github.com/DanielSalvatierraSanchez/Proyecto-6-API-REST.git
 ```
 
 - Entrega del .env:
 
 ```
-DB_URL=mongodb+srv://dss250583:dss250583@cluster0.a9lsjqe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+DB_URL=mongodb+srv://dss250583:<password>@cluster0.a9lsjqe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
 ```
 
 - Scripts del proyecto:
