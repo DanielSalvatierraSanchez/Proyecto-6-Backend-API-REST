@@ -4,7 +4,6 @@
 
 En este proyecto se debe de demostrar el aprendizaje de la parte inicial del Backend, 
 creando un servidor y conectando a la BBDD para posteriormente realizar un CRUD completo. 
-
 [![N|Solid](https://moonlay.com/wp-content/uploads/2023/01/mongoDB.png)](https://nodesource.com/products/nsolid)[![N|Solid](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkucnJUfKnyTgCTQ-XEp_CbYIDzXJ_1b4BafS7alYn8v8duI9DMcv3zQvb_WF11dX-95M&usqp=CAU)](https://nodesource.com/products/nsolid)[![N|Solid](https://moonlay.com/wp-content/uploads/2023/01/node-JS.png)](https://nodesource.com/products/nsolid)
 
 ### Requisitos mínimos:
@@ -56,6 +55,26 @@ npm run seed
 | UPDATE PLAYER | PUT    | /:id | { **player data** } | application/json | { player } |
 | DELETE PLAYER | DELETE | /:id | --- | --- | { player } |
 
+### Resumen de los Endpoints Players
+
+- Para la creación de los "Players" se crea un Schema, en el que requerimos 3 campos "name", "number", "position", "age" y "nationality". 
+
+> Primeramente comparará si "name" y "number" ya existen.
+
+> En "position" tendremos 4 opciones (Portero, Defensa, Centrocampista y Delantero).
+
+> Opcionalmente podremos añadirle "age", "nationality", "image" (la cual por defecto agregara una predeterminada) y "cars".  
+
+- Para la obtención de los datos se han creado múltiples maneras de obtenerlos, desde poder obtenerlos todos a la vez, hasta poder obtenerlos dependiendo del "ID", "name", "number", "position", "age" y "nationality".
+
+> Al obtenerlos todos los jugadores a la vez podremos ver con detalle todos los coches que tengan cada uno de ellos.
+
+-  Podremos actualizar cualquier jugador mediante su "ID".
+
+> Se contemplará que si existe un coche y lo introducimos de nuevo que no lo duplique.
+
+- Y finalmente para eliminar cualquier jugador lo eliminaremos mediante su "ID".
+
 ### Endpoints Cars
 
 | NAME        | METHOD | ENDPOINT        | BODY                                                        | CONTENT-TYPE     | RESPONSE        |
@@ -71,5 +90,20 @@ npm run seed
 | DELETE CAR | DELETE | /:id | --- | --- | { car } |
 | DELETE CAR OF PLAYER | DELETE    | /car/:id | { **car model** } | application/json | { car } |
 
+### Resumen de los Endpoints Cars
 
+- Para la creación de los "Cars" se crea un Schema, en el que requerimos 4 campos "branch", "model", "color" y "price".
 
+> Primeramente comparará si "model" ya existe para no duplicarlo. 
+
+- Para la obtención de los datos se han creado múltiples maneras de obtenerlos, desde poder obtenerlos todos a la vez, hasta poder obtenerlos dependiendo del "ID", "branch", "model", "color" y "price".
+
+> Cuando queramos obtener algún coche por "price" nos mostrará todos lo coche que tengan el mismo "price" o superior.
+
+-  Podremos actualizar cualquier coche mediante su "ID"
+
+- Podremos eliminar cualquier coche mediante su "ID".
+
+- Y finalmente podremos eliminar cualquier coche de cualquier jugador.
+
+> Buscaremos el jugador por "ID" y el coche por su "model" para despues eliminar el coche seleccionado del jugador. 
